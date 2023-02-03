@@ -111,9 +111,16 @@
                                         
                                        
                                         
+                                        {% if post.tages_n == "True" %}              
                                         <div>
-                                       
+                                                           
+                                            <a href="" class="mr - 1 badge badge-info" hidden>#{{ post.tages_n }}</a></div><br>
+                    
+                                        {% else %}    
+                    <div>
                                         <a href="{% url 'article_list_by_tag' post.tages_n %}" class="mr - 1 badge badge-info">#{{ post.tages_n }}</a></div><br>
+                    
+                                        {% endif %}
 
                                   
                                        
@@ -221,11 +228,11 @@
                                             </div>
 
 
-                                               <div class="ml-auto" style="padding: 10px;">
-                                            <button  style="background-color:rgba(255, 132, 0, 0.953) ; color: #fff; border:rgba(255, 132, 0, 0.953) ; border-radius: 10px; "  stclass="btn btn--e-brand-b-2" >
-                                                 <a  style="color:#fff; border:rgba(255, 132, 0, 0.953) ;" href="{% url 'product_detail' post.id %}"  class="btn btn--e-brand-b-2">Buy now</a>
-                                                </button>
-                                               </div>
+                                            <div class="ml-auto" style="padding: 10px;">
+                                                <button  style="background-color:rgba(192, 192, 190, 0.953) ; color: #fff; border:rgba(255, 132, 0, 0.953) ; border-radius: 15px; "  stclass="btn btn--e-brand-b-2" >
+                                                     <a  style="color:rgb(10, 10, 10); border:rgba(255, 132, 0, 0.953) ;" href="{% url 'product_detail' post.id %}"  class="btn btn--e-brand-b-2 ">Get now</a>
+                                                    </button>
+                                                   </div>
                                             
                                          </div>
                                          

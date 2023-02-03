@@ -91,9 +91,7 @@ svg{
     margin-left: auto;
     margin-top: auto;
 } */
-.active a{
-    color: #28a745 !important;
-}
+
 
 
 
@@ -409,7 +407,7 @@ svg{
 }
 .post a{
     text-decoration: none;
-    color: black;
+    color: rgb(0, 0, 0);
 }
 .post-main{
     flex: 1;
@@ -456,6 +454,27 @@ svg{
     margin-top: 15px 0;
     background-size: cover;
    
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.post-image-tag{
+    height: 330px;
+    width: 115%;
+    border-radius: 18px;
+    margin-top: 15px 0;
+    background-size: cover;
+    margin-left: -55px;
+    
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.post-image-cmt{
+    height: 330px;
+    width: 115%;
+    border-radius: 18px;
+    margin-top: 15px 0;
+    background-size: cover;
+margin-left: -55px;
     background-position: center;
     background-repeat: no-repeat;
 }

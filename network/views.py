@@ -230,6 +230,8 @@ def user_create_post(request):
         doc=request.FILES.get('doc')
         status=request.POST.get('status')
         tages_n=request.POST.get('tages_n')
+        if tages_n == "":
+            tages_n = "True"
         if status == None:
             status = "nsale"
         Product_Price=request.POST.get('Product_Price')

@@ -4,7 +4,7 @@
 
 {% block profile %}
     <!--====== Main App ======-->
-    <div id="app">
+  
 
         
  
@@ -24,7 +24,7 @@
                 </div>
                 <div style="flex: 1">
                     <div class="post-user">
-                        <div>
+                        <div style="padding-left: 10px;">
                           
                             {% if post.posts_type == "page_post" %}
                            
@@ -41,7 +41,10 @@
                                 <span class="grey">&nbsp;</span>
                             </a>
                             <span class="grey">&nbsp;&middot;&nbsp;&nbsp;{{post.date_created | date:"P M d Y"}}</span>
+                            <br>
+                        <p>student</p>
                         </div>
+                        
                         <div class="dropdown" style="height: 1em; margin-top: -3px; margin-right: -3px;">
                             <button class="icon-btn dropdown-toggle" type="button" id="dropdownMenuButton" onfocus="drop_down(event)" onblur="remove_drop_down(event)" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <svg width="1em" height="1em" viewBox="0 -2 16 16" class="bi bi-chevron-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -79,7 +82,7 @@
                         </div>
                     </div>
                     {% if post.content_text is not None %}
-                        <div class="post-content">
+                        <div style="padding-top: 15px; width: 115%; margin-left: -55px;  "  class="post-content">
                             {{post.content_text | linebreaksbr}}
                         </div>
                     {% endif %}
@@ -88,7 +91,7 @@
                                        
                     <div>
                                        
-                        <a href="{% url 'article_list_by_tag' post.tages_n %}" class="mr - 1 badge badge-info">#{{ post.tages_n }}</a></div><br>
+                        <a href="{% url 'article_list_by_tag' post.tages_n %}" style="margin-left: -55px; margin-top: 10px;"   class="mr - 1 badge badge-info">#{{ post.tages_n }}</a></div><br>
 
                
                     {% if post.status == "nsale" %}
@@ -102,25 +105,25 @@
                         {% elif post.content_image.url|slice:"-4:" == ".jpg" %}
 
 
-                        <div class="post-image" style="background-image: url(/media/{{post.content_image}});"></div>
+                        <div class="post-image-tag" style="background-image: url(/media/{{post.content_image}});"></div>
 
                         {% elif post.content_image.url|slice:"-4:" == ".jpeg" %}
 
-                        <div class="post-image" style="background-image: url(/media/{{post.content_image}});"></div>
+                        <div class="post-image-tag" style="background-image: url(/media/{{post.content_image}});"></div>
 
                         {% elif post.content_image.url|slice:"-4:" == ".png" %}
                         
-                        <div class="post-image" style="background-image: url(/media/{{post.content_image}});"></div>
+                        <div class="post-image-tag" style="background-image: url(/media/{{post.content_image}});"></div>
 
                         {% elif post.content_image.url|slice:"-4:" == ".pdf" %}
 
 <a href="{{ post.content_image.url }}" download>
                        
-                        <div class="post-image" style="background-image: url(../../static/pdffp.jpg);"> <center>click to download</center></div>
+                        <div class="post-image-tag" style="background-image: url(../../static/pdffp.jpg);"> <center>click to download</center></div>
                     </a>
                      {% else %}
 
-                     <div class="post-image" style="display: none;"></div>
+                     <div class="post-image-tag" style="display: none;"></div>
 
 
 
@@ -144,19 +147,19 @@
                         {% elif post.content_image.url|slice:"-4:" == ".jpg" %}
 
 
-                        <div class="post-image" style="background-image: url(/media/{{post.content_image}});"></div>
+                        <div  class="post-image-tag" style="background-image: url(/media/{{post.content_image}});"></div>
 
                         {% elif post.content_image.url|slice:"-4:" == ".jpeg" %}
 
-                        <div class="post-image" style="background-image: url(/media/{{post.content_image}});"></div>
+                        <div class="post-image-tag" style="background-image: url(/media/{{post.content_image}});"></div>
 
                         {% elif post.content_image.url|slice:"-4:" == ".png" %}
                         
-                        <div class="post-image" style="background-image: url(/media/{{post.content_image}});"></div>
+                        <div class="post-image-tag-" style="background-image: url(/media/{{post.content_image}});"></div>
 
                      {% else %}
 
-                     <div class="post-image" style="display: none;"></div>
+                     <div class="post-image-tag" style="display: none;"></div>
 
 
 
@@ -179,7 +182,7 @@
 
                    
                     {% endif %}<br>
-                        <div class="post-actions">
+                        <div class="post-actions" style=" width: 115%; margin-left: -55px;">
 
                         {% if user in post.likers.all %}
                             <div class="like" onclick="unlike_post(this)" data-post_id="{{post.id}}">
@@ -279,7 +282,7 @@
                         
 
                     </div>
-                    <div>
+                    <div style=" margin-top: 10px; width: 115%; margin-left: -55px;">
                        
                         <form action="{% url 'commentz' post.id  %}" method="POST"  enctype="multipart/form-data">
                             {% csrf_token %}
@@ -322,9 +325,7 @@
         {% endfor %}
        
  
- 
-         
-     </div>
+
 
 {% endblock %}
 
